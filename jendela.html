@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoh Jendela Dialog jQuery</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<button id="showDialog">Klik</button>
+
+<div id="dialog" title="Haloo">
+  <p>Ini adalah jendela dialog</p>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#dialog").dialog({
+        autoOpen: false, 
+        modal: true, 
+        buttons: { 
+            "Tutup": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $("#showDialog").click(function(){
+        $("#dialog").dialog("open");
+    });
+});
+</script>
+
+</body>
+</html>
